@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["*"],
+      "@services/*": ["services/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+      "@redux": ["redux"],
+      "@redux/*": ["redux/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@hooks/*": ["hooks/*"],
+      "@functions/*": ["functions/*"],
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@layouts/*": ["layouts/*"]
+    }
+  }
+}

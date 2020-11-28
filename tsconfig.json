@@ -1,10 +1,15 @@
 {
+  "extends": "./paths.json",
   "compilerOptions": {
+    "types": [
+      "node"
+    ],
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2015"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,8 +23,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src"
   },
+  "files": [
+    "src/styles/styled.d.ts"
+  ],
   "include": [
     "src"
   ]

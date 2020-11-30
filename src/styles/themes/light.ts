@@ -3,8 +3,8 @@ export default {
   body: {
     primary: '#bf0e4f',
     secondary: '#5b337a',
-    background: '#f4f4f4',
-    backgroundSecondary: '#f6f6f6',
+    background: '#eeeeee',
+    backgroundSecondary: '#ffff',
     backgroundTertiary: '#f8f8f8',
     backgroundQuaternary: '#bbb',
     text: '#333',

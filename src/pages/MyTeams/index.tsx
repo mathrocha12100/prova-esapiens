@@ -1,44 +1,24 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 
 import CommonLayout from '@layouts/Common';
 import Card from '@components/Card';
 import { AppContext } from '~/App';
-import { AddButton } from './styles';
+import { AddButton, Container, Top5Content } from './styles';
 import { FaPlus } from 'react-icons/fa';
 import Table from '@components/Table';
-import api from '@services/api';
-
-const test = [
-  {
-    id: 1,
-    name: 'matheus',
-  },
-  {
-    id: 2,
-    name: 'douglas',
-  },
-];
+import { cells } from './tableConfig';
+import { teams as teamsData } from './data';
+import Chip from './components/Chip';
 
 const MyTeams: React.FC = () => {
-  const [teams, setTeams] = useState();
-
-  useEffect(() => {
-    async function exec() {
-      try {
-        const response = await api.get('/leagues');
-        setTeams(response.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    exec();
-  }, []);
-
+  const [highestSelected, setHighestSelected] = useState('');
+  const [lowestSelected, setLowestSelected] = useState('');
   const { language } = useContext(AppContext);
+  const { bodyCells, headCells } = cells(language);
 
   return (
     <CommonLayout>
-      {JSON.stringify(teams)}
+      <Container>
       <Card
         button={
           <AddButton>
@@ -49,18 +29,26 @@ const MyTeams: React.FC = () => {
       >
         <Table
           table={{
-            array: test,
-            bodyCells: [
-              { field: 'id', variant: 'text' },
-              { field: 'name', variant: 'text' },
-            ],
-            headCells: [
-              { field: 'id', label: 'Código' },
-              { field: 'name', label: 'Nome' },
-            ],
+            array: teamsData,
+            bodyCells,
+            headCells,
           }}
         />
       </Card>
+      <Card
+        header={{ title: language.content.top5Title }}
+      >
+        <Top5Content>
+          <div>
+            {/* {teams.map} */}
+          </div>
+          <div>
+            
+          </div>
+        </Top5Content>
+      </Card>
+      
+      </Container>
     </CommonLayout>
   );
 };

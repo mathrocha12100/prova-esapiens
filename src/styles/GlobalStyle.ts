@@ -10,9 +10,10 @@ export default createGlobalStyle`
   body {
     background: ${(props) => props.theme.body.background};
     color: ${(props) => props.theme.body.text};
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
- 
   *, button, input {
     font-family: Roboto, sans-serif;
   }

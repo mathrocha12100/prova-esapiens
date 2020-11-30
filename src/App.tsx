@@ -18,7 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import history from './services/history';
 
-interface AppContextProps {
+export interface AppContextProps {
   toggleTheme: () => void;
   language: LanguageProps;
   changeLanguage: (arg: LanguagesAvailableTypes) => void;

@@ -4,3 +4,7 @@ export interface Props {
   selected: string;
   setSelected: (name: string) => void;
 }
+
+export interface ContainerProps {
+  focus?: boolean;
+}

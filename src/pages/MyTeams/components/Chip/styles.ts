@@ -1,13 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ContainerProps } from './types';
 
-export const Container = styled.button`
+export const Container = styled.button<ContainerProps>`
+  border: 0;
+  ${(props) => props.focus && css`
+    border: 2px solid ${props => props.theme.body.primary};
+  `}
+
   &:not(:focus) {
     cursor: pointer;
-
     transition: opacity 0.4s;
-    &:hover {
-      opacity: 0.4;
-    }
   }
 
 
@@ -21,12 +23,7 @@ export const Container = styled.button`
   color: ${props => props.theme.body.text}; 
 
   outline: none;
-  border: 0;
   transition: border 0.4s;
   border-radius: 6px;
-
-  &:focus {
-    border: 2px solid ${props => props.theme.body.primary};
-  }
   margin-bottom: 1vh;
 `;

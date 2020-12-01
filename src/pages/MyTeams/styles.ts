@@ -33,4 +33,10 @@ export const Top5Content = styled.div`
   display: grid;
   grid-gap: 2vw;
   grid-template-columns: 1fr 1fr;
+
+  div {
+    background: ${props => props.theme.body.background};
+    padding: 1vh;
+    border-radius: 8px; 
+  }
 `;

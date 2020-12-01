@@ -69,7 +69,7 @@ export const teams = [
     "venue_city": "Chapecó, Santa Catarina",
     "venue_capacity": 22600
   },
-  {
+  /*{
     "team_id": 16,
     "name": "Internacional",
     "code": null,
@@ -278,5 +278,5 @@ export const teams = [
     "venue_address": "Avenida Edmundo Pinheiro de Abreu 721, Setor Bela Vista",
     "venue_city": "Goiânia, Goiás",
     "venue_capacity": 10000
-  }
+  }*/
 ];

@@ -17,6 +17,7 @@ const Avatar: React.FC<Props> = ({
       textColor={textColor}
       size={size}
       backgroundColor={backgroundColor}
+      className="avatar"
       {...rest}
     >
       <strong>{getFirstLetter(description || '')}</strong>

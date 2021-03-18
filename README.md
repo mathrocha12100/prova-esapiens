@@ -29,10 +29,10 @@ quando o projeto começar a rodar ele ficara em [http://localhost:3000](http://l
 
 os componentes possuem 4 arquivos:
 
-`types.ts` - Arquivo que possue todos os tipos do componente.
-`functions.ts` - Arquivo com todas as funções do componente.
-`styles.ts` - Arquivo com todas as estilizações do componente.
-`index.tsx` - Arquivo do componente.
+* `types.ts` - Arquivo que possue todos os tipos do componente.
+* `functions.ts` - Arquivo com todas as funções do componente.
+* `styles.ts` - Arquivo com todas as estilizações do componente.
+* `index.tsx` - Arquivo do componente.
 
 em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses
 casos ele pode possuir uma pasta `components` que vai ficar os componentes customizados dele mesmo.

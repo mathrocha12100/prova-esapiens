@@ -12,7 +12,8 @@ declare module 'styled-components' {
       backgroundSecondary: string;
       backgroundTertiary: string;
       backgroundQuaternary: string; 
-      text: string;
+      defaultText: string;
+      secondaryText: string;
     };
 
     header: {

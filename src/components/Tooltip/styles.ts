@@ -10,7 +10,7 @@ export const Container = styled.div`
     min-width: 120px;
     max-width: 320px;
     background: ${props => props.theme.body.backgroundQuaternary};
-    color: ${props => props.theme.body.text};
+    color: ${props => props.theme.body.defaultText};
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
@@ -20,7 +20,6 @@ export const Container = styled.div`
     padding: 5px 0;
     border-radius: 6px;
   
-    /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
   }
@@ -32,7 +31,7 @@ export const Container = styled.div`
   & span.tooltipText::after {
     content: " ";
     position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
+    top: 100%; 
     left: 50%;
     margin-left: -5px;
     border-width: 5px;

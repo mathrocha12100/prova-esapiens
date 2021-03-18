@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Container } from './styles';
 import { Props } from './types';
 
-const Menu: React.FC<Props> = ({ anchor, options, open }) => {
+const Menu: React.FC<Props> = ({
+  anchor,
+  options,
+  anchorClassName,
+  open,
+  onClose,
+}) => {
+  useEffect(() => {
+    window.onclick = function (event: any) {
+      if (!event.target.matches(`.${anchorClassName}`)) onClose();
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container open={open}>
       {anchor}
       <div className="menu-content">
         {options.map((option) => (
-          <button onClick={option.onClick} className="option" key={option.key}>{option.label}</button>
+          <button
+            onClick={option.onClick}
+            className={`option ${option.className && option.className}`}
+            key={option.key}
+          >
+            {option.label}
+          </button>
         ))}
       </div>
     </Container>

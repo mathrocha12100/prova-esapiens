@@ -1,11 +1,18 @@
 export interface Option {
   key: any;
   label: string;
-  onClick: () => void,
+  onClick: () => void;
+  className?: string;
 }
 
 export interface Props {
   options: Option[];
   anchor: JSX.Element;
+  anchorClassName: string; // classe do componente de achor
+  open: boolean;
+  onClose: () => void; // função de quando o menu item fecha
+}
+
+export interface ContainerProps {
   open?: boolean;
 }

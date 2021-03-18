@@ -5,6 +5,12 @@ type Response<T> = [
   Dispatch<SetStateAction<T>>,
 ];
 
+/**
+ * hook customizado para guardar estados no localstorage
+ * 
+ * @param key - chave da variavel pra ser guardada no localstorage
+ * @param defaultValue - valor padrão
+ */
 function usePersistedState<T>(key: string, defaultValue: T): Response<T> {
   const [state, setState] = useState(() => {
     const storageValue = localStorage.getItem(key);

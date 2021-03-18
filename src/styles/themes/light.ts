@@ -1,20 +1,21 @@
 export default {
   title: 'light',
   body: {
-    primary: '#bf0e4f',
+    primary: '#FF5256',
     secondary: '#5b337a',
     background: '#eeeeee',
     backgroundSecondary: '#ffff',
     backgroundTertiary: '#f8f8f8',
     backgroundQuaternary: '#bbb',
-    text: '#333',
+    defaultText: '#fff',
+    secondaryText: '#333',
   },
   header: {
-    primary: '#bf0e4f',
+    primary: '#FF5256',
     text: '#fff',
   },
   dialog: {
     primary: '#f5f5f5',
-    text: '#333',
+    text: '#fff',
   },
 };

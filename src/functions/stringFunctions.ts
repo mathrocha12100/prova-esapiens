@@ -1,13 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
-export function getFirstLetter(string: string) {
-  try {
-    return string.split('')[0];
-  } catch (err) {
-    return '';
-  }
-}
-
+/**
+ * função para escolher a bandeira do pais
+ * 
+ * @param isoCode - Codigo do
+ */
 export function countryToFlag(isoCode: string) {
   try {
     return typeof String.fromCodePoint !== 'undefined'

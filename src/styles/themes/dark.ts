@@ -3,16 +3,17 @@ import { darken } from 'polished';
 export default {
   title: 'dark',
   body: {
-    primary: '#bf0e4f',
+    primary: '#0E162D',
     secondary: '#5b337a',
     background: '#121212',
     backgroundSecondary: '#222222',
     backgroundTertiary: '#333333',
     backgroundQuaternary: '#5555',
-    text: darken(0.2, '#eee'),
+    defaultText: darken(0.2, '#eee'),
+    secondaryText: '#333',
   },
   header: {
-    primary: '#333',
+    primary: '#0E162D',
     text: darken(0.15, '#eee'),
   },
   dialog: {

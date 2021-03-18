@@ -1,9 +1,9 @@
-import header from './header';
-import content from './content';
+import mainPage from './mainPage';
+import userDetailsPage from './userDetailsPage';
 
 export default {
   name: 'ptBr',
   flag: 'BR',
-  header,
-  content,
+  mainPage,
+  userDetailsPage,
 };

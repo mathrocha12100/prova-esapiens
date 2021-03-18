@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Resumo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação para listagem de repositorios do github de um usuário especifico
 
-## Available Scripts
+## Rodar o projeto em ambiente de desenvolvimento
 
-In the project directory, you can run:
+`yarn install` ou `npm install` instalar dependencias do projeto
+`yarn start` ou `npm start` inicia o projeto
+quando o projeto começar a rodar ele ficara em [http://localhost:3000](http://localhost:3000).
 
-### `yarn start`
+## Como funciona a estrutura do projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Estrutura de pastas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`cypress/integration` - pasta com os testes da aplicação.
+
+`src` - pasta raiz do projeto.
+`src/assets` - pasta com todos os assets do projeto como imagens.
+`src/components` - pasta com todos os componentes reutilizaveis do projeto.
+`src/functions` - pasta com funções repetitivas de usos diversos.
+`src/hooks` - pasta com hooks customizados do react.
+`src/routes` - pasta com todas as rotas da aplicação.
+`src/services` - psa.
+`src/styles` - pasta com o css global e temas da aplicação.
+`src/types` - pasta com todos os tipos novos a serem declarados para o typescript.
+
+##### Estrutura de um componente
+
+os componentes possuem 4 arquivos:
+
+`types.ts` - Arquivo que possue todos os tipos do componente.
+`functions.ts` - Arquivo com todas as funções do componente.
+`styles.ts` - Arquivo com todas as estilizações do componente.
+`index.tsx` - Arquivo do componente.
+
+em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses
+casos ele pode possuir uma pasta `components` que vai ficar os componentes customizados dele mesmo.
+
+## Sobre o desenvolvimento
+
+Aplicação desenvolvida em React.js
+
+
+## Gerar uma buiild do projeto
+
+`yarn build` ou `npm build` Gera uma build do projeto
+para rodar essa build é nescessario a dependencia `serve` [https://www.npmjs.com/package/serve]
+depois de gerar a build na pasta raiz do projeto executar `npx serve -s build`.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

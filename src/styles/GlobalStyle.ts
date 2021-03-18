@@ -7,12 +7,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    background: ${(props) => props.theme.body.background};
-    color: ${(props) => props.theme.body.text};
+  body, #root {
     max-width: 100vw;
-    overflow-x: hidden;
-  }
+    min-height: 100vh;
+  } 
 
   *, button, input {
     font-family: Roboto, sans-serif;

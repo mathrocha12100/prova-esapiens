@@ -2,7 +2,8 @@
   "extends": "./paths.json",
   "compilerOptions": {
     "types": [
-      "node"
+      "node",
+      "cypress"
     ],
     "target": "es5",
     "lib": [
@@ -30,6 +31,7 @@
     "src/styles/styled.d.ts"
   ],
   "include": [
-    "src"
+    "src",
+    "src/types/svg.d.ts"
   ]
 }

@@ -1,9 +1,9 @@
-import header from './header';
-import content from './content';
+import mainPage from './mainPage';
+import userDetailsPage from './userDetailsPage';
 
 export default {
   name: 'enUs',
   flag: 'US',
-  header,
-  content,
+  mainPage,
+  userDetailsPage,
 };

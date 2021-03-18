@@ -6,7 +6,7 @@ export interface Option {
 }
 
 export interface Props {
-  options: Option[];
+  options: Option[]; // opções de menu item
   anchor: JSX.Element;
   anchorClassName: string; // classe do componente de achor
   open: boolean;

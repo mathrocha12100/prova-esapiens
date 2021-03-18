@@ -13,5 +13,6 @@ export default {
   following: {
     notFoundMessage: 'Esse usuário não segue ninguem',
   },
-  
-}
+  notFoundMessage: 'Usuário não encontrado',
+  notFoundButtonText: 'Procurar outro usuário',
+};

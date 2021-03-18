@@ -3,6 +3,9 @@ import { PaginationProps } from './types';
 import { PaginationContainer } from './styles';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+/**
+ * componente de paginação para listagens 
+ */
 function Pagination(props: PaginationProps) {
   const { amountOfPages, page, onPageChange } = props;
 

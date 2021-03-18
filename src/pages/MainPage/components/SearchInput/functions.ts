@@ -14,6 +14,7 @@ export async function findGithubUser(
   setLoading: (arg: boolean) => void,
   history: ReturnType<typeof useHistory>,
   setUserData?: (arg: GetGithubUserResponse) => void,
+  setNotFound?: (arg: boolean) => void
 ) {
   try {
     setLoading(true);
@@ -22,7 +23,7 @@ export async function findGithubUser(
     );
 
     setLoading(false);
-    
+
     if (setUserData) {
       setUserData(response.data);
     } else {
@@ -33,6 +34,9 @@ export async function findGithubUser(
     if (err.response) {
       if (err.response.status === 404) {
         toast.error('Usuário não encontrado');
+        if (setNotFound) {
+          setNotFound(true);
+        }
       } else {
         toast.error('Ocorreu um erro inesperado');
       }

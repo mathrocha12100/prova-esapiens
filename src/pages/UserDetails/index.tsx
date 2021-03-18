@@ -5,15 +5,17 @@ import { CardTypes, UserDetailsProps, UserDetailsPageParams } from './types';
 import ListRepositories from './ListRepositories';
 import ListFollowers from './ListFollowers';
 import ListFollowing from './ListFollowing';
+import Menu from '~/components/Menu';
+import NotFound from './components/NotFound';
 
-import { Container } from './styles';
 import githubLogoWhite from '~/assets/GitHub_Logo_White.svg';
 import githubLogoBlack from '~/assets/GitHub_BlackLogo.svg';
+import { Container } from './styles';
 import { useParams, useHistory } from 'react-router-dom';
 import { findGithubUser } from '../MainPage/components/SearchInput/functions';
 import { ThemeContext } from 'styled-components';
 import { AppContext } from '~/App';
-import Menu from '~/components/Menu';
+import { FaFrown } from 'react-icons/fa';
 import { countryToFlag } from '~/functions/stringFunctions';
 
 function UserDetails(props: UserDetailsProps) {
@@ -24,11 +26,12 @@ function UserDetails(props: UserDetailsProps) {
   const [selectedCard, setSelectedCard] = useState<CardTypes>('repositories');
   const { username } = useParams<UserDetailsPageParams>();
   const history = useHistory();
+  const [notFound, setNotFound] = useState(false);
   const { language, changeLanguage } = useContext(AppContext);
 
   useEffect(() => {
     if (username !== userData?.login) {
-      findGithubUser(username, setLoading, history, setUserData);
+      findGithubUser(username, setLoading, history, setUserData, setNotFound);
     }
   }, [username]);
 
@@ -108,51 +111,68 @@ function UserDetails(props: UserDetailsProps) {
             <p>{userData?.bio || ''}</p>
           </div>
         </header>
-        <nav className="user-details-data">
-          <div
-            onClick={() => setSelectedCard('repositories')}
-            id="repositories-card"
-            className={`user-details-card ${
-              selectedCard === 'repositories' && 'selected-card'
-            }`}
-          >
-            <strong className="user-details-card-amount">
-              {loading ? '...' : userData?.public_repos || 0}
-            </strong>
-            <span className="user-details-card-text">
-              {language.userDetailsPage.cardsText.repositories}
-            </span>
+        {notFound ? (
+          <div className="not-found-container">
+            <NotFound
+              message={language.userDetailsPage.notFoundMessage}
+              icon={<FaFrown size={68} />}
+            />
+            <button
+              onClick={() => history.push('/')}
+              className="find-other-user-button"
+            >
+              {language.userDetailsPage.notFoundButtonText}
+            </button>
           </div>
-          <div
-            onClick={() => setSelectedCard('followers')}
-            id="followers-card"
-            className={`user-details-card ${
-              selectedCard === 'followers' && 'selected-card'
-            }`}
-          >
-            <strong className="user-details-card-amount">
-              {loading ? '...' : userData?.followers || 0}
-            </strong>
-            <span className="user-details-card-text">
-              {language.userDetailsPage.cardsText.followers}
-            </span>
-          </div>
-          <div
-            onClick={() => setSelectedCard('following')}
-            id="following-card"
-            className={`user-details-card ${
-              selectedCard === 'following' && 'selected-card'
-            }`}
-          >
-            <strong className="user-details-card-amount">
-              {loading ? '...' : userData?.following || 0}
-            </strong>
-            <span className="user-details-card-text">
-              {language.userDetailsPage.cardsText.following}
-            </span>
-          </div>
-        </nav>
-        <div className="user-details-content">{whichListRender()}</div>
+        ) : (
+          <>
+            <nav className="user-details-data">
+              <div
+                onClick={() => setSelectedCard('repositories')}
+                id="repositories-card"
+                className={`user-details-card ${
+                  selectedCard === 'repositories' && 'selected-card'
+                }`}
+              >
+                <strong className="user-details-card-amount">
+                  {loading ? '...' : userData?.public_repos || 0}
+                </strong>
+                <span className="user-details-card-text">
+                  {language.userDetailsPage.cardsText.repositories}
+                </span>
+              </div>
+              <div
+                onClick={() => setSelectedCard('followers')}
+                id="followers-card"
+                className={`user-details-card ${
+                  selectedCard === 'followers' && 'selected-card'
+                }`}
+              >
+                <strong className="user-details-card-amount">
+                  {loading ? '...' : userData?.followers || 0}
+                </strong>
+                <span className="user-details-card-text">
+                  {language.userDetailsPage.cardsText.followers}
+                </span>
+              </div>
+              <div
+                onClick={() => setSelectedCard('following')}
+                id="following-card"
+                className={`user-details-card ${
+                  selectedCard === 'following' && 'selected-card'
+                }`}
+              >
+                <strong className="user-details-card-amount">
+                  {loading ? '...' : userData?.following || 0}
+                </strong>
+                <span className="user-details-card-text">
+                  {language.userDetailsPage.cardsText.following}
+                </span>
+              </div>
+            </nav>
+            <div className="user-details-content">{whichListRender()}</div>
+          </>
+        )}
       </main>
     </Container>
   );

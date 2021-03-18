@@ -89,6 +89,29 @@ export const Container = styled.div`
       }
     }
 
+    div.not-found-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button.find-other-user-button {
+        width: 250px;
+        outline: none;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        background: ${(props) => props.theme.body.primary};
+        color: ${props => props.theme.body.defaultText};
+        font-weight: bold;
+        transition: opacity 0.4s;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+    }
+
     nav.user-details-data {
       margin-top: 30px;
 

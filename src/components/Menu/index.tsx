@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import { Container } from './styles';
 import { Props } from './types';
 
+/**
+ * componente global de menu
+ */
 const Menu: React.FC<Props> = ({
   anchor,
   options,

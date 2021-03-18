@@ -97,6 +97,7 @@ function ListRepositories(props: ListRepositoriesProps) {
                   window.location.href = repo.html_url;
                 }}
                 key={repo.id}
+                className={`repository-card`}
               >
                 <strong className="repository-card-title">{repo.name}</strong>
                 <p className="repository-card-description">
@@ -104,7 +105,7 @@ function ListRepositories(props: ListRepositoriesProps) {
                 </p>
                 <ul className="general-data-content">
                   {repo.language && <li>{repo.language}</li>}
-                  <li>
+                  <li className="repository-stars">
                     <FaStar />
                     {repo.stargazers_count || 0}
                   </li>

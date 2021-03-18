@@ -20,9 +20,10 @@ quando o projeto começar a rodar ele ficara em [http://localhost:3000](http://l
 `src/functions` - pasta com funções repetitivas de usos diversos.
 `src/hooks` - pasta com hooks customizados do react.
 `src/routes` - pasta com todas as rotas da aplicação.
-`src/services` - psa.
 `src/styles` - pasta com o css global e temas da aplicação.
 `src/types` - pasta com todos os tipos novos a serem declarados para o typescript.
+`src/languages` - pasta com todas as linguas do projeto.
+`src/App.tsx` - Arquivo raiz do React
 
 ##### Estrutura de um componente
 
@@ -36,10 +37,6 @@ os componentes possuem 4 arquivos:
 em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses
 casos ele pode possuir uma pasta `components` que vai ficar os componentes customizados dele mesmo.
 
-## Sobre o desenvolvimento
-
-Aplicação desenvolvida em React.js
-
 
 ## Gerar uma buiild do projeto
 
@@ -47,5 +44,9 @@ Aplicação desenvolvida em React.js
 para rodar essa build é nescessario a dependencia `serve` [https://www.npmjs.com/package/serve]
 depois de gerar a build na pasta raiz do projeto executar `npx serve -s build`.
 
-### `yarn test`
+## Testes Automatizados
 
+Para inicar os testes é necessário ja estar com o servidor do React rodando[`yarn start` ou `npm start`]
+o arquivo que contem a url do server React é `testConfig.ts` por padrão está em http://localhost:3000
+
+para iniciar os testes executar o comando `yarn run cypress open` ou `npm run cypress open`

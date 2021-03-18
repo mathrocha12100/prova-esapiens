@@ -1,6 +1,8 @@
+import testConfig from '../../../testConfig';
+
 describe('application theme', () => {
   it('should change the application theme to dark theme', () => {
-    cy.visit('http://localhost:3000/');
+    cy.visit(testConfig.localhost);
     cy.get('#change-theme-switch').click({ force: true });
 
     cy.get('#search-input-submit-button').should(

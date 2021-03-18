@@ -1,10 +1,11 @@
 import ptBr from '../../../src/languages/ptBr';
 import enUs from '../../../src/languages/enUs';
 
+import testConfig from '../../../testConfig';
 
 describe('should change the application language', () => {
   it('should change the application language to english', () => {
-    cy.visit('http://localhost:3001');
+    cy.visit(testConfig.localhost);
 
     cy.get('#change-language-button').click();
 

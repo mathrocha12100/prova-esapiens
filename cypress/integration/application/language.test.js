@@ -1,6 +1,7 @@
 import ptBr from '../../../src/languages/ptBr';
 import enUs from '../../../src/languages/enUs';
 
+
 describe('should change the application language', () => {
   it('should change the application language to english', () => {
     cy.visit('http://localhost:3001');

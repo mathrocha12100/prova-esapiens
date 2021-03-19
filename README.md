@@ -8,8 +8,8 @@ Aplicação para listagem de repositorios do github de um usuário especifico
 
 ## Rodar o projeto em ambiente de desenvolvimento
 
-`yarn install` ou `npm install` instalar dependencias do projeto
-`yarn start` ou `npm start` inicia o projeto
+`yarn install` ou `npm install` para instalar dependencias do projeto<br/>
+`yarn start` ou `npm start` para iniciar o projeto<br/>
 quando o projeto começar a rodar ele ficara em [http://localhost:3000](http://localhost:3000).
 
 ## Como funciona a estrutura do projeto
@@ -38,18 +38,18 @@ os componentes possuem 4 arquivos:
 - `styles.ts` - Arquivo com todas as estilizações do componente.
 - `index.tsx` - Arquivo do componente.
 
-em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses
+em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses<br/>
 casos ele pode possuir uma pasta `components` que vai ficar os componentes customizados dele mesmo.
 
 ## Gerar uma buiild do projeto
 
-`yarn build` ou `npm build` Gera uma build do projeto
-para rodar essa build é nescessario a dependencia `serve` [https://www.npmjs.com/package/serve]
+`yarn build` ou `npm build` Gera uma build do projeto<br/>
+para rodar essa build é nescessario a dependencia `serve` [https://www.npmjs.com/package/serve]<br/>
 depois de gerar a build na pasta raiz do projeto executar `npx serve -s build`.
 
 ## Testes Automatizados
 
-Para inicar os testes é necessário ja estar com o servidor do React rodando[`yarn start` ou `npm start`]
-o arquivo que contem a url do server React é `testConfig.ts` por padrão está em http://localhost:3000
+Para inicar os testes é necessário ja estar com o servidor do React rodando[`yarn start` ou `npm start`]<br/>
+o arquivo que contem a url do server React é `testConfig.ts` por padrão está em http://localhost:3000<br/>
 
 para iniciar os testes executar o comando `yarn run cypress open` ou `npm run cypress open`

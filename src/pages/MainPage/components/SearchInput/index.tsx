@@ -26,6 +26,11 @@ function SearchInput(props: SearchInputProps) {
         placeholder={language.mainPage.findUserInputPlaceholder}
         className="search-input"
         id="search-input"
+        onKeyPress={(press) => {
+          if (press.code === 'Enter') {
+            submit();
+          }
+        }}
       />
 
       <button

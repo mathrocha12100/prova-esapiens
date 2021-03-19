@@ -58,6 +58,7 @@ function UserDetails(props: UserDetailsProps) {
           <img
             className="github-logo"
             src={title === 'dark' ? githubLogoWhite : githubLogoBlack}
+            
             alt="githubLogo"
           />
         </a>
@@ -102,7 +103,11 @@ function UserDetails(props: UserDetailsProps) {
       <main className="list-repositories-main-container">
         <header className="user-details-header">
           <div className="avatar-container">
-            <img src={userData?.avatar_url || ''} alt="" />
+            <img onClick={() => {
+              if (userData.html_url) {
+                window.location.href = userData.html_url;
+              }
+            }} className="github-avatar" src={userData?.avatar_url || ''} alt="" />
           </div>
           <div className="user-data-container">
             <strong>{userData?.name || ''}</strong>

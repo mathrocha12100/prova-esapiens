@@ -20,6 +20,12 @@ export const Container = styled.div`
     img.github-logo {
       max-width: 128px;
       max-height: 128px;
+      transition: opacity 0.4s;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+      }
     }
 
     div.header-actions-buttons {
@@ -51,10 +57,17 @@ export const Container = styled.div`
       display: flex;
 
       div.avatar-container {
-        img {
+        img.github-avatar {
           max-width: 148px;
           max-height: 148px;
           border-radius: 50%;
+
+          transition: opacity 0.4s;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.6;
+          }
         }
       }
 
@@ -101,7 +114,7 @@ export const Container = styled.div`
         padding: 10px;
         border-radius: 8px;
         background: ${(props) => props.theme.body.primary};
-        color: ${props => props.theme.body.defaultText};
+        color: ${(props) => props.theme.body.defaultText};
         font-weight: bold;
         transition: opacity 0.4s;
 

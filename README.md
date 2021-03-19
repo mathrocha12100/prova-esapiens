@@ -50,6 +50,6 @@ depois de gerar a build na pasta raiz do projeto executar `npx serve -s build`.
 ## Testes Automatizados
 
 Para inicar os testes é necessário ja estar com o servidor do React rodando[`yarn start` ou `npm start`]<br/>
-o arquivo que contem a url do server React é `testConfig.ts` por padrão está em http://localhost:3000<br/>
+o arquivo que contem a url do server React é `testConfig.ts` por padrão é http://localhost:3000<br/>
 
-para iniciar os testes executar o comando `yarn run cypress open` ou `npm run cypress open`
+executar o comando `yarn run cypress open` ou `npm run cypress open` para iniciar os testes 

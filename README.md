@@ -41,7 +41,7 @@ os componentes possuem 4 arquivos:
 em alguns casos alguns componentes possuem componentes especificos dele mesmo e nesses<br/>
 casos ele pode possuir uma pasta `components` que vai ficar os componentes customizados dele mesmo.
 
-## Gerar uma buiild do projeto
+## Gerar uma build do projeto
 
 `yarn build` ou `npm build` Gera uma build do projeto<br/>
 para rodar essa build é nescessario a dependencia `serve` [https://www.npmjs.com/package/serve]<br/>
